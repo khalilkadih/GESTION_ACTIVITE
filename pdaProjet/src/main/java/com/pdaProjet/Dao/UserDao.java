@@ -23,10 +23,6 @@ public class UserDao {
         EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         User user = entityManager.find(User.class, id);
-        System.out.println("user id :: " + user.getId_user());
-        System.out.println("User password :: " +user.getPassword());
-        System.out.println("User lastname :: " + user.getName());
-        System.out.println("User email :: " + user.getEmail());
         entityManager.getTransaction().commit();
         entityManager.close();
     }
@@ -40,10 +36,6 @@ public class UserDao {
         entityManager.getTransaction().begin();
 
         User user = entityManager.find(User.class, id);
-        System.out.println("student id :: " + user.getId_user());
-        System.out.println("student firstname :: " + user.getName());
-        System.out.println("student email :: " + user.getEmail());
-        System.out.println("student password :: " + user.getPassword());
         entityManager.merge(user);
         entityManager.getTransaction().commit();
         entityManager.close();
@@ -54,10 +46,6 @@ public class UserDao {
         EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         User user = entityManager.find(User.class, id);
-        System.out.println("student id :: " + user.getId_user());
-        System.out.println("student name :: " + user.getName());
-        System.out.println("student email :: " + user.getEmail());
-        System.out.println("student password :: " + user.getPassword());
         entityManager.remove(user);
         entityManager.getTransaction().commit();
         entityManager.close();

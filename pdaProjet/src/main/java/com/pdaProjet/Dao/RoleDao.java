@@ -17,7 +17,7 @@ public class RoleDao {
     }
 
     public Role find(long id) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PERSISTENCE");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PDA");
         EntityManager entityManager = emf.createEntityManager();
         entityManager.getTransaction().begin();
         Role role = entityManager.find(Role.class, id);

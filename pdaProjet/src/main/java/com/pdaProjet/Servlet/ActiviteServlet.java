@@ -44,8 +44,7 @@ public class ActiviteServlet extends HttpServlet {
                     break;
 
             default:
-                resp.sendRedirect("/WEB-INF//activities");
-                resp.getWriter().println("Route Not Found !!!!!!");
+                resp.sendRedirect("/WEB-INF/activities");
         }
     }
 
@@ -60,9 +59,7 @@ public class ActiviteServlet extends HttpServlet {
                         String description = req.getParameter("description");
                         String date_debut = req.getParameter("date_debut");
                         String date_fin = req.getParameter("date_fin");
-
                         Activite activite = new Activite();
-
                         activite.setDate_debut(date_debut);
                         activite.setDate_defin(date_fin);
                         activite.setTitre(titre);
@@ -70,7 +67,7 @@ public class ActiviteServlet extends HttpServlet {
                         activite.setEtat(EtatEnum.values()[Integer.parseInt(req.getParameter("etat"))]);
                         new ActiviteService().addActivite(activite);
                         //req.getRequestDispatcher("/pdaLastVersion_war_exploded/activities").forward(req,resp);
-                resp.sendRedirect("/pdaLastVersion_war_exploded/activities");
+                        resp.sendRedirect("/pdaLastVersion_war_exploded/activities");
                 break;
 
             case "/activities/update" :

@@ -1,3 +1,4 @@
+/*
 package com.pdaProjet.Service;
 
 import com.pdaProjet.Repository.LoginRepo;
@@ -8,3 +9,4 @@ public class LoginService {
         return loginRepo.login(email,password);
     }
 }
+*/

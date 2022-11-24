@@ -39,17 +39,17 @@
         <th>delete</th>
         <th>update</th>
     </tr>
-    <c:forEach items="${activities}" var="p">
+    <c:forEach items="${activities}" var="a">
         <tr>
-            <td>${p.id}</td>
-            <td>${p.titre}</td>
-            <td>${p.description}</td>
-            <td>${p.date_debut}</td>
-            <td>${p.date_defin}</td>
-            <td>${p.etat}</td>
+            <td>${a.id}</td>
+            <td>${a.titre}</td>
+            <td>${a.description}</td>
+            <td>${a.date_debut}</td>
+            <td>${a.date_defin}</td>
+            <td>${a.etat}</td>
 
-            <td><a onclick="return confirm('etes-vous sure supprimer le produit?')"href="<%=request.getContextPath()%>/activities/delete?id=${p.id}">Delete</a></td>
-            <td> <a href="<%=request.getContextPath()%>/activities/update?id=${p.id}">update</a> </td>
+            <td><a onclick="return confirm('etes-vous sure supprimer le produit?')"href="<%=request.getContextPath()%>/activities/delete?id=${a.id}">Delete</a></td>
+            <td> <a href="<%=request.getContextPath()%>/activities/update?id=${a.id}">update</a> </td>
         </tr>
     </c:forEach>
 </table>

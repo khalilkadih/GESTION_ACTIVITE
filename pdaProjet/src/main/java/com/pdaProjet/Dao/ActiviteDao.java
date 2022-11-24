@@ -24,8 +24,6 @@ public class ActiviteDao {
          return (ArrayList<Activite>) entityManager.createQuery("select a from Activite a",Activite.class).getResultList();
          }
 
-
-
     public Activite findEntity(long id) {
 
         EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
@@ -46,7 +44,7 @@ public class ActiviteDao {
 
     }
 
-    public void removeEntity(long id) {
+    public Boolean removeEntity(long id) {
 
         EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
@@ -54,6 +52,7 @@ public class ActiviteDao {
         entityManager.remove(Activité);
         entityManager.getTransaction().commit();
         entityManager.close();
+        return true;
     }
 
 }

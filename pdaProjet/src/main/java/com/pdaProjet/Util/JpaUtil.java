@@ -5,18 +5,18 @@ import jakarta.persistence.Persistence;
 
 public class JpaUtil {
     public static final String PERSISTENCE_UNIT_NAME = "PDA";
-    private static EntityManagerFactory factory;
+    private static EntityManagerFactory entityManagerFactory;
 
     public static EntityManagerFactory getEntityManagerFactory() {
-        if (factory == null) {
-            factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        if (entityManagerFactory == null) {
+            entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         }
-        return factory;
+        return entityManagerFactory;
     }
 
     public static void shutdown() {
-        if (factory != null) {
-            factory.close();
+        if (entityManagerFactory != null) {
+            entityManagerFactory.close();
         }
     }
 }

@@ -2,18 +2,20 @@ package com.pdaProjet.Dao;
 
 import com.pdaProjet.Entitys.Participants;
 import com.pdaProjet.Util.JpaUtil;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
+import java.util.ArrayList;
+
 public class ParticipantDao {
-    public void insertEntity(Participants Participants){
+    public Participants insertEntity(Participants participants){
         EntityManager entityManager =JpaUtil.getEntityManagerFactory().createEntityManager();
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
-        entityManager.persist(Participants);
+        entityManager.persist(participants);
         entityManager.getTransaction().commit();
         entityManager.close();
+        return participants;
     }
 
     public void findEntity(long id) {
@@ -54,6 +56,11 @@ public class ParticipantDao {
         entityManager.remove(Participants);
         entityManager.getTransaction().commit();
         entityManager.close();
+    }
+
+    public ArrayList<Participants> showAllParticpant(){
+        EntityManager entityManager=JpaUtil.getEntityManagerFactory().createEntityManager();
+        return (ArrayList<Participants>) entityManager.createQuery("select p from Participants p",Participants.class).getResultList();
     }
 
 }

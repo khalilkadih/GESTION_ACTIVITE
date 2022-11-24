@@ -1,21 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Youcode
-  Date: 16/11/2022
-  Time: 00:06
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"
-         import="java.util.ArrayList"
-         import="com.pdaProjet.Entitys.Role" %>
-<html>
-<head>
-  <title>add user</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
-
-
+<%@ page import="com.pdaProjet.Entitys.Role" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ include file="includes/header.jsp"%>
 <div class="w-50 m-auto mt-5 rounded shadow p-3 mb-5 bg-body rounded">
   <h1 class="text-center">Add User</h1>
   <form action="SaveUser" method="post">

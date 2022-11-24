@@ -2,10 +2,9 @@ package com.pdaProjet.Entitys;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.*;
 import java.util.List;
+
 @Entity
-
 @Table(name="activite")
-
 public class Activite {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,11 +32,8 @@ public class Activite {
         this.date_defin = date_defin;
     }
 
-
-
     public Activite() {
     }
-
 
     public String getTitre() {
         return titre;

@@ -1,5 +1,4 @@
 package com.pdaProjet.Repository;
-
 import com.pdaProjet.Dao.RoleDao;
 import com.pdaProjet.Dao.UserDao;
 import com.pdaProjet.Entitys.Role;
@@ -10,17 +9,14 @@ import jakarta.persistence.Persistence;
 import org.hibernate.query.Query;
 
 public class UserRepo {
-
     private UserDao userDao = new UserDao();
     public User add(User user) {
-
         if(user.getRole().getName() == null){
             Role role = new RoleDao().find(user.getRole().getId_role());
             user.setRole(role);
             System.out.println(user);
         }
         return userDao.insertEntity(user);
-
     }
 
     public int login(String Email, String Password) {

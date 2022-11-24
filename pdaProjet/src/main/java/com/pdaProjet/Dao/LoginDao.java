@@ -8,13 +8,7 @@ import jakarta.persistence.Persistence;
 public class LoginDao {
 
     public User find(long id) {
-        /*
-        Session session = HibernateFactory.getInstance().getSession().openSession();
-        session.beginTransaction();
-        Users user = session.get(Users.class,id);
-        session.close();
-       */
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PERSISTENCE");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PDA");
         EntityManager entityManager = emf.createEntityManager();
         entityManager.getTransaction().begin();
         User user = entityManager.find(User.class, id);
@@ -25,4 +19,6 @@ public class LoginDao {
 
         return user;
     }
+
+
 }
